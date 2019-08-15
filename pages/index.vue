@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h1>Carousel</h1>
+    <header>header</header>
+    <img src="../assets/blowdry1.jpg" alt="carousel" />
     <nav>navbar</nav>
     <footer>footer</footer>
   </div>
