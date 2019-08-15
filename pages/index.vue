@@ -14,5 +14,8 @@ export default Vue.extend({});
 <style lang="scss" scoped>
 * {
   margin: 0;
+  nav {
+    color: red;
+  }
 }
 </style>
