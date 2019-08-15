@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path \"./.eslintignore\" .",
     "lint:fix": "eslint --ext .ts,.js,.vue --ignore-path \"./.eslintignore\" . --fix",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
