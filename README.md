@@ -1,0 +1,1 @@
+Simple Nuxt.js web app for a friend
