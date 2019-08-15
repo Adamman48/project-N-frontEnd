@@ -1,0 +1,4 @@
+node_modules
+Logo.spec.js
+nuxt.config.ts
+jest.config.js
