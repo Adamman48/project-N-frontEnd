@@ -1,4 +1,4 @@
-module.exports = {
+/* module.exports = {
   root: true,
   env: {
     browser: true,
@@ -8,10 +8,9 @@ module.exports = {
     parser: '@typescript-eslint/parser'
   },
   extends: [
+    '@nuxtjs/eslint-config-typescript',
     '@nuxtjs',
-    'prettier',
-    'prettier/vue',
-    'plugin:prettier/recommended',
+    v
     'plugin:nuxt/recommended'
   ],
   plugins: [
@@ -20,6 +19,16 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    semi: [2, "always" ]
+    semi: [2, "always" ],
+    "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
   }
+} */
+
+module.exports = {
+  extends: [
+    '@nuxtjs/eslint-config-typescript',
+    'prettier/vue',
+    'plugin:prettier/recommended',
+  ]
 }
