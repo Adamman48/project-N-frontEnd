@@ -8,13 +8,8 @@
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
 import ButtonOptions from '../models/button-interface';
-import GenericButton from './generic-button.vue';
 
-@Component({
-  components: {
-    GenericButton
-  }
-})
+@Component
 export default class MenuItem extends Vue {
   @Prop({ type: Object, required: true }) item!: ButtonOptions;
 }

@@ -1,11 +1,9 @@
 <template>
   <div>
-    <span>Cégnév</span>
-    <!-- modify later -->
     <menu-item
-      v-for="(item, index) in itemList"
+      v-for="(productType, index) in typeList"
       :key="index"
-      :item="item"
+      :item="productType"
       class="text-uppercase"
     />
   </div>
@@ -21,8 +19,8 @@ import MenuItem from './menu-item.vue';
     MenuItem
   }
 })
-export default class HeaderMenu extends Vue {
-  @Prop({ type: Array, required: true }) itemList!: ButtonOptions[];
+export default class ProductFilterBar extends Vue {
+  @Prop({ type: Array, required: true }) typeList!: ButtonOptions[];
 }
 </script>
 
