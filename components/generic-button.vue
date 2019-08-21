@@ -1,5 +1,8 @@
 <template>
-  <button>{{ buttonOptions.title }}</button>
+  <button>
+    <i class="material-icons">{{ buttonOptions.icon }}</i>
+    <span>{{ buttonOptions.title }}</span>
+  </button>
 </template>
 
 <script lang="ts">
@@ -8,6 +11,6 @@ import ButtonOptions from '../models/button-interface';
 
 @Component
 export default class GenericButton extends Vue {
-  @Prop({ type: Object, required: true }) buttonOptions!: ButtonOptions; //  learn about decorators
+  @Prop({ type: Object, required: true }) buttonOptions!: ButtonOptions;
 }
 </script>
