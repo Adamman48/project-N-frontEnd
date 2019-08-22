@@ -20,9 +20,6 @@
         :text="image.text"
         :img-src="image.source"
       ></b-carousel-slide>
-      <b-carousel-slide
-        :img-src="'https://picsum.photos/1024/480/?image=52'"
-      ></b-carousel-slide>
     </b-carousel>
   </div>
 </template>
@@ -34,7 +31,21 @@ import CarouselImageData from '../models/carousel-interface';
 @Component
 export default class Carousel extends Vue {
   @Prop({ type: Array, required: true }) imageList!: CarouselImageData[];
+
+  slide: number = 0;
+  sliding: null | boolean = null;
+  onSlideStart(): void {
+    this.sliding = true;
+  }
+  onSlideEnd(): void {
+    this.sliding = false;
+  }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+div {
+  width: 80%;
+  height: 80%;
+}
+</style>

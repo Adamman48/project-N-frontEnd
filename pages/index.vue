@@ -12,6 +12,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { BCarousel } from 'bootstrap-vue';
 import ProductFilterBar from '../components/product-filter-navbar.vue';
 import HeaderMenu from '../components/header-menu.vue';
 import ButtonOptions from '../models/button-interface';
@@ -33,7 +34,8 @@ import CarouselImageData from '../models/carousel-interface';
   components: {
     HeaderMenu,
     ProductFilterBar,
-    Carousel
+    Carousel,
+    BCarousel
   }
 })
 export default class Home extends Vue {
@@ -55,22 +57,22 @@ export default class Home extends Vue {
     {
       caption: 'image 1',
       text: 'this is an image',
-      source: '../assets/blowdry1.jpg'
+      source: require('../assets/11223838-situation-in-a-hair-salon.jpg')
     },
     {
       caption: 'image 2',
       text: 'also an image',
-      source: '../assets/istockphoto-480912050-612x612.jpg'
+      source: require('../assets/istockphoto-480912050-612x612.jpg')
     },
     {
       caption: 'image 3',
       text: 'still an image',
-      source: '../assets/istockphoto-498615428-612x612.jpg'
+      source: require('../assets/istockphoto-498615428-612x612.jpg')
     },
     {
       caption: 'image 4',
       text: 'yes...image',
-      source: '../assets/istockphoto-859611718-612x612.jpg'
+      source: require('../assets/istockphoto-859611718-612x612.jpg')
     }
   ];
 }
