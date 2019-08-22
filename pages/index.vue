@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <header><header-menu :item-list="mockNavbarItemList" /></header>
-    <carousel :image-list="mockCarouselImages" />
+  <div class="home-page">
+    <header>
+      <header-menu :item-list="mockNavbarItemList" />
+    </header>
+    <carousel :image-list="mockCarouselImages" class="carousel" />
     <nav>
       <product-filter-bar :type-list="mockFilterBar" />
     </nav>
-    <div>MEGJELENÍTÉS</div>
+    <div class="main-display col">MEGJELENÍTÉS</div>
     <footer>footer</footer>
   </div>
 </template>
@@ -40,7 +42,7 @@ import CarouselImageData from '../models/carousel-interface';
 })
 export default class Home extends Vue {
   mockFilterBar: ButtonOptions[] = [
-    { title: 'hajlakk', icon: 'android' },
+    { title: 'hajlakk' },
     { title: 'olló' },
     { title: 'haj wax' },
     { title: 'haj festék' },
@@ -79,10 +81,46 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss" scoped>
-* {
+@import '../assets/_color-palette.scss';
+@import '../assets/_mixins.scss'; //  might be better with flex-center if free space would be used
+
+body {
   margin: 0;
-  nav {
-    color: red;
-  }
+}
+
+.home-page {
+  background: $mainBackground;
+  height: 100vh;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  background: $headerBackground;
+}
+
+.carousel {
+  opacity: 0.9;
+  height: 45vh;
+  width: 70vw;
+  @include centerContent();
+}
+
+nav {
+  background: $navbarBackground;
+}
+
+.main-display {
+  width: 80vw;
+  height: 45vh;
+  @include centerContent();
+  background: $displayBackground;
+  opacity: 0.6;
+}
+
+footer {
+  background: $footerBackground;
+  color: white;
+  height: 4.2vh;
 }
 </style>

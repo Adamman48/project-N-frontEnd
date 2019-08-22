@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="carousel-container">
     <b-carousel
       id="carousel-main"
       v-model="slide"
@@ -7,8 +7,8 @@
       controls
       indicators
       background="#ababab"
-      img-width="1024"
-      img-height="480"
+      img-width="1220"
+      img-height="610"
       style="text-shadow: 1px 1px 2px #333;"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
@@ -44,8 +44,8 @@ export default class Carousel extends Vue {
 </script>
 
 <style lang="scss" scoped>
-div {
-  width: 80%;
-  height: 80%;
+#carousel-main div {
+  width: 70vw;
+  height: 45vh;
 }
 </style>

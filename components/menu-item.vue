@@ -15,4 +15,8 @@ export default class MenuItem extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+button {
+  outline: 0;
+}
+</style>
