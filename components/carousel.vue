@@ -26,9 +26,15 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator';
+import { BCarousel, BCarouselSlide } from 'bootstrap-vue';
 import CarouselImageData from '../models/carousel-interface';
 
-@Component
+@Component({
+  components: {
+    BCarousel,
+    BCarouselSlide
+  }
+})
 export default class Carousel extends Vue {
   @Prop({ type: Array, required: true }) imageList!: CarouselImageData[];
 

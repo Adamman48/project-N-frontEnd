@@ -14,7 +14,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { BCarousel } from 'bootstrap-vue';
 import ProductFilterBar from '../components/product-filter-navbar.vue';
 import HeaderMenu from '../components/header-menu.vue';
 import ButtonOptions from '../models/button-interface';
@@ -36,8 +35,7 @@ import CarouselImageData from '../models/carousel-interface';
   components: {
     HeaderMenu,
     ProductFilterBar,
-    Carousel,
-    BCarousel
+    Carousel
   }
 })
 export default class Home extends Vue {
