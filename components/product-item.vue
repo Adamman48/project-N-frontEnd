@@ -5,9 +5,13 @@
       :src="productDetails.image.source"
       :alt="productDetails.image.alt"
     />
-    <span class="name">{{ productDetails.name }}</span>
-    <span class="price">{{ productDetails.price }}</span>
-    <span class="description">{{ productDetails.description }}</span>
+    <section>
+      <span class="name">{{ productDetails.name }}</span>
+      <span class="price">{{ productDetails.price }}Ft</span>
+      <span class="description"
+        >Részletek: {{ productDetails.description }}</span
+      >
+    </section>
   </div>
 </template>
 
@@ -23,6 +27,20 @@ export default class ProductItem extends Vue {
 
 <style lang="scss" scoped>
 .container {
+  margin-left: 5px;
+  margin-right: 5px;
   display: flex;
+  background: lightcoral;
+  height: 20%;
+  max-width: 19%;
+}
+
+.image {
+  max-width: 20%;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
 }
 </style>

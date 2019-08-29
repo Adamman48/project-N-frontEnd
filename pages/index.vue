@@ -7,7 +7,14 @@
     <nav>
       <product-filter-bar :type-list="mockFilterBar" />
     </nav>
-    <div class="main-display col">MEGJELENÍTÉS</div>
+    <div class="main-display">
+      <product-item
+        class="product"
+        v-for="(product, index) in mockProducts"
+        :key="index"
+        :product-details="product"
+      />
+    </div>
     <footer>footer</footer>
   </div>
 </template>
@@ -19,6 +26,8 @@ import HeaderMenu from '../components/header-menu.vue';
 import ButtonOptions from '../models/button-interface';
 import Carousel from '../components/carousel.vue';
 import CarouselImageData from '../models/carousel-interface';
+import ProductItem from '../components/product-item.vue';
+import ProductDetails from '../models/product-item-interface';
 
 @Component({
   head(): Object {
@@ -35,7 +44,8 @@ import CarouselImageData from '../models/carousel-interface';
   components: {
     HeaderMenu,
     ProductFilterBar,
-    Carousel
+    Carousel,
+    ProductItem
   }
 })
 export default class Home extends Vue {
@@ -48,11 +58,13 @@ export default class Home extends Vue {
     { title: 'hajszárítók' },
     { title: 'haj zselé' }
   ];
+
   mockNavbarItemList: ButtonOptions[] = [
     { title: 'faq' },
     { title: 'elérhetőség' },
     { title: 'jogi nyilatkozat' }
   ];
+
   mockCarouselImages: CarouselImageData[] = [
     {
       caption: 'image 1',
@@ -73,6 +85,63 @@ export default class Home extends Vue {
       caption: 'image 4',
       text: 'yes...image',
       source: require('../assets/istockphoto-859611718-612x612.jpg')
+    }
+  ];
+
+  mockProducts: ProductDetails[] = [
+    {
+      name: 'közönséges hajzselé',
+      image: {
+        source: require('../assets/zsele.jpg'),
+        alt: 'hair gel'
+      },
+      description: 'nem használ semmit, de drága',
+      price: 5000
+    },
+    {
+      name: 'közönséges olló',
+      image: {
+        source: require('../assets/ollo.jpg'),
+        alt: 'hairdresser scissors'
+      },
+      description: 'tépi a hajat, életlen',
+      price: 10000
+    },
+    {
+      name: 'közönséges hajfesték',
+      image: {
+        source: require('../assets/festek.png'),
+        alt: 'hair colorizer'
+      },
+      description: 'nem ilyen színű lesz, pech',
+      price: 3000
+    },
+    {
+      name: 'közönséges hajzselé',
+      image: {
+        source: require('../assets/zsele.jpg'),
+        alt: 'hair gel'
+      },
+      description: 'nem használ semmit, de drága',
+      price: 5000
+    },
+    {
+      name: 'közönséges olló',
+      image: {
+        source: require('../assets/ollo.jpg'),
+        alt: 'hairdresser scissors'
+      },
+      description: 'tépi a hajat, életlen',
+      price: 10000
+    },
+    {
+      name: 'közönséges hajfesték',
+      image: {
+        source: require('../assets/festek.png'),
+        alt: 'hair colorizer'
+      },
+      description: 'nem ilyen színű lesz, pech',
+      price: 3000
     }
   ];
 }
@@ -114,6 +183,14 @@ nav {
   @include centerContent();
   background: $displayBackground;
   opacity: 0.6;
+  display: flex;
+  .product {
+    margin: 1%;
+    &:not(:first-child) {
+      margin-left: 0;
+    }
+  }
+  flex-wrap: wrap;
 }
 
 footer {
