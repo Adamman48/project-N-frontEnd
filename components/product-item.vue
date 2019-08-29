@@ -1,17 +1,25 @@
 <template>
   <div class="container">
-    <img
-      class="image"
-      :src="productDetails.image.source"
-      :alt="productDetails.image.alt"
-    />
-    <section>
-      <span class="name">{{ productDetails.name }}</span>
-      <span class="price">{{ productDetails.price }}Ft</span>
-      <span class="description"
-        >Részletek: {{ productDetails.description }}</span
-      >
-    </section>
+    <b-button @click="$bvModal.show(`product-modal-${productKey}`)">{{
+      productDetails.name
+    }}</b-button>
+    <b-modal
+      :id="`product-modal-${productKey}`"
+      centered
+      :title="productDetails.name"
+    >
+      <img
+        class="image"
+        :src="productDetails.image.source"
+        :alt="productDetails.image.alt"
+      />
+      <section>
+        <span class="price my-4">{{ productDetails.price }}Ft</span>
+        <span class="description my-4"
+          >Részletek: {{ productDetails.description }}</span
+        >
+      </section>
+    </b-modal>
   </div>
 </template>
 
@@ -21,7 +29,8 @@ import ProductDetails from 'models/product-item-interface';
 
 @Component
 export default class ProductItem extends Vue {
-  @Prop({ type: Object, required: true }) productDetails!: ProductDetails;
+  @Prop({ type: Object, required: true }) productDetails!: ProductDetails[];
+  @Prop({ type: Number, required: true }) productKey!: number;
 }
 </script>
 

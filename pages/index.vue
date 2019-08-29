@@ -9,9 +9,10 @@
     </nav>
     <div class="main-display">
       <product-item
-        class="product"
         v-for="(product, index) in mockProducts"
         :key="index"
+        :product-key="index"
+        class="product"
         :product-details="product"
       />
     </div>
