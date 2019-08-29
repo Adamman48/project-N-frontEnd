@@ -45,5 +45,30 @@ describe('Carousel', () => {
     expect(images.length).toBe(2);
   });
 
-  /* add a test for clicking and incrementing .slide */
+  /* it('shows the previous image when left arrow is clicked', () => {
+    const wrapper = mount(Carousel, {
+      propsData: {
+        imageList: [
+          {
+            caption: 'image 1',
+            text: 'this is a dummy image',
+            source: 'test.jpg'
+          },
+          {
+            caption: 'mock 2',
+            text: 'this is a dummy image',
+            source: 'test.jpg'
+          }
+        ]
+      }
+    });
+    const previousButton = wrapper.find('.carousel-control-prev');
+    const nextButton = wrapper.find('.carousel-control-next');
+    
+    nextButton.trigger('click');
+    const carousel = wrapper.find('#carousel-main');
+    const activeImage = wrapper.find('.carousel-item .active');
+    console.log(activeImage.vm.$children[0])
+    expect(activeImage).toContain('mock 2');
+  }) */
 });
