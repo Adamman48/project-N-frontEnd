@@ -1,4 +1,4 @@
 export default interface ButtonOptions {
-  title: string;
-  icon?: string;
+  readonly title: string;
+  readonly icon?: string;
 }

@@ -1,5 +1,5 @@
 export default interface CarouselImageData {
-  caption: string;
-  text: string;
-  source: string;
+  readonly caption: string;
+  readonly text: string;
+  readonly source: string;
 }
